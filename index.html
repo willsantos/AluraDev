@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/editor-style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&family=Inter:wght@100;300;400;500;700;900&display=swap" rel="stylesheet"> 
+    
+    
+    <title>Alura Dev - Editor de código</title>
+</head>
+<body class="app">
+    <header class="header__content">
+        <div class="logo">
+            <img src="./assets/images/logo.png" alt="Logo AluraDev">
+        </div>
+        <div class="search__bar">
+            <input type="search" name="search-bar" id="search-bar" class="search__bar--input" placeholder="Busque por algo">
+        </div>
+        <div class="avatar">
+            <img src="./assets/images/avatar.jpg" alt="Avatar do usuário">
+            <span>Nome</span>
+        </div>
+        
+        <div class="search__icon">
+            <a href="#"><img src="./assets/images/icon-search.png" alt="Icone de pesquisa"></a>
+        </div>      
+        <div class="menu__mobile">
+            <a href="#"><img src="./assets/images/icon-menu.png" alt="Icone do Menu"></a>
+        </div>
+        
+        
+    </header>
+    <main class="main__content">
+        <div class="editor__window">
+            <div class="editor__bar">
+                <img src="./assets/images/mac_buttons.svg" alt="">
+            </div>
+            <div class="editor__content">
+                <pre class="editor__area--pre">
+                    <code contenteditable="true" class="editor__area">const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
+                        
+                        const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
+                        
+                        const unfold = (f, seed) => {
+                            const go = (f, seed, acc) => {
+                                const res = f(seed)
+                                return res ? go(f, res[1], acc.concat([res[0]])) : acc
+                            }
+                            return go(f, seed, [])
+                        }
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <button class="button__highlight">Visualizar com highlight</button>
+        
+    </main>
+    <aside class="left__content">
+        <nav class="menu__desktop">
+            <h2 class="title__secondary">Menu</h2>
+            <ul class="menu__list">
+                <li class="menu__item icon__code"><a href="#" class="active">Editor de código</a></li>
+                <li class="menu__item icon__community"><a href="#">Comunidade</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <aside class="right__content">
+        <div class="project__data">
+            <h2 class="title__secondary">Seu Projeto</h2>
+            <input type="text" name="project__name" id="" class="project__data--text">
+            <textarea name="project__description" id="" cols="30" rows="10" class="project__data--description"></textarea>
+        </div>
+        <div class="project__styles">
+            <h2 class="title__secondary">Personalização</h2>
+            <select name="project--highlight" id="" class="project__styles--select">
+                <option value="JavaScript" class="highlight__option">JavaScript</option>
+                <option value="CSS" class="highlight__option">CSS</option>
+                <option value="html" class="highlight__option">HTML</option>
+            </select>
+            <input type="color" name="window--color" value="#6BD1FF" id="" class="project__styles--color"/>
+        </div>
+        <button class="button_filled">Salvar Projeto</button>
+    </aside>
+</body>
+</html>
